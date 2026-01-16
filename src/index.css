@@ -1,17 +1,146 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=block');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg-primary: #F9F9F7;
+  --bg-secondary: #F5F5F5;
+  --foreground: #111111;
+  --muted: #E5E5E0;
+  --accent: #CC0000;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23111111' fill-opacity='0.04' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  color: var(--foreground);
+}
+
+/* Force sharp corners everywhere */
+* {
+  border-radius: 0 !important;
+}
+
+/* Font utilities */
+.font-serif {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+}
+
+.font-body {
+  font-family: 'Lora', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* Hard shadow hover effect */
+.hard-shadow-hover {
+  transition: all 0.2s ease-out;
+}
+
+.hard-shadow-hover:hover {
+  box-shadow: 4px 4px 0px 0px #111111;
+  transform: translate(-2px, -2px);
+}
+
+/* Drop cap for intro paragraphs */
+.drop-cap::first-letter {
+  float: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  line-height: 0.8;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+/* Link hover with red underline */
+.link-hover {
+  transition: all 0.2s ease-out;
+}
+
+.link-hover:hover {
+  text-decoration: underline;
+  text-decoration-color: #CC0000;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #111111;
+  color: #F9F9F7;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  transition: all 0.2s ease-out;
+}
+
+.btn-primary:hover {
+  background-color: #F9F9F7;
+  color: #111111;
+  border-color: #111111;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #111111;
+  border: 1px solid #111111;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  transition: all 0.2s ease-out;
+}
+
+.btn-outline:hover {
+  background-color: #111111;
+  color: #F9F9F7;
+}
+
+/* Inverted section */
+.inverted-section {
+  background-color: #111111;
+  color: #F9F9F7;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-500);
+}
+
+/* Selection */
+::selection {
+  background-color: #111111;
+  color: #F9F9F7;
+}
+
+code {
+  font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, monospace;
+}
